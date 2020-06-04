@@ -6,8 +6,16 @@
 # 127.0.0.1:5000
 # in browser should take me to the page
 
-# 1. import Flask
+# 1. import Flask - says that we're creating a Flask app, differentiating it from a Python app
 from flask import Flask, jsonify
+
+# Set up database
+# 1- connect to sqlite
+# 2- relect the db
+# 3 - reflect the tables
+# 4 - name the classes for reference
+
+
 
 # Set up Flask
 # 2. Create an app, being sure to pass __name__
@@ -16,7 +24,7 @@ app = Flask(__name__)
 # 3. Home Page
 # Define what to do when a user hits the index route
 @app.route("/")
-def welcome():
+def index():
     "List all available api routes."
     return (
     f"Available Routes:<br/>"
@@ -60,6 +68,6 @@ def about():
     print("Server received request for 'About' page...")
     return "Welcome to my 'About' page!"
 
-
+# Keeps the Flask app running
 if __name__ == "__main__":
     app.run(debug=True)
